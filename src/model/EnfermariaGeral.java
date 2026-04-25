@@ -10,3 +10,5 @@ public class EnfermariaGeral extends Enfermaria {
         this.recursos = recursos;
     }
 }
+
+
