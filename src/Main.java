@@ -2,8 +2,17 @@ import model.*;
 import utils.CSVReader;
 import java.time.LocalDate;
 
+/**
+ * Classe principal para monitorização de ocupação de camas e indicadores hospitalares.
+ */
 public class Main {
 
+    /**
+     * Método principal que inicializa o sistema, carrega os dados e apresenta os relatórios.
+     *
+     * @param args argumentos da linha de comandos (não utilizados)
+     * @throws Exception se ocorrer erro na leitura dos ficheiros CSV
+     */
     public static void main(String[] args) throws Exception {
         Hospital hospital = new Hospital("Hospital XYZ");
         CSVReader.carregarEnfermarias("src/enfermarias.csv", hospital);
