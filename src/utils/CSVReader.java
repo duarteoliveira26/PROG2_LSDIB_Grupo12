@@ -11,7 +11,18 @@ import model.EnfermariaPsiquiatrica;
 import model.Episodio;
 import model.Hospital;
 
+/**
+ * Classe utilitária para leitura de ficheiros CSV e geração de logs.
+ */
 public class CSVReader {
+    /**
+     * Carrega as enfermarias a partir de um ficheiro CSV.
+     * O formato esperado: TIPO,ID,CAMAS,EXTRA1,EXTRA2,EXTRA3
+     *
+     * @param caminho caminho para o ficheiro CSV
+     * @param h hospital onde as enfermarias serão adicionadas
+     * @throws Exception se ocorrer erro na leitura do ficheiro
+     */
     public static void carregarEnfermarias(String caminho, Hospital h) throws Exception {
         File ficheiro = new File(caminho);
         if (ficheiro.exists()) {
@@ -41,6 +52,14 @@ public class CSVReader {
         }
     }
 
+    /**
+     * Carrega os episódios e associa-os à enfermaria correta.
+     * Regista erros em 'erros.log' se a enfermaria não existir ou os dados forem inválidos.
+     *
+     * @param caminho caminho para o ficheiro CSV
+     * @param h hospital onde os episódios serão adicionados
+     * @throws Exception se ocorrer erro na leitura do ficheiro
+     */
     public static void carregarEpisodios(String caminho, Hospital h) throws Exception {
         File ficheiro = new File(caminho);
         if (ficheiro.exists()) {
